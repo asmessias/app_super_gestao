@@ -21,14 +21,15 @@
                         <tr>
                             <th>Nome</th>
                             <th>Descrição</th>
+                            <th>Fornecedor</th>
                             <th>Peso</th>
                             <th>Unidade</th>
                             <th>Comprimento</th>
                             <th>Altura</th>
                             <th>Largura</th>
-                            <th></th>
-                            <th></th>
-                            <th></th>
+                            <th>#</th>
+                            <th>#</th>
+                            <th>#</th>
                         </tr>
                     </thead>
 
@@ -37,6 +38,7 @@
                             <tr>
                                 <td>{{ $produto->nome }}</td>
                                 <td>{{ $produto->descricao }}</td>
+                                <td>{{ $produto->fornecedor->nome }}</td>
                                 <td>{{ $produto->peso }}</td>
                                 <td>{{ $produto->unidade_id }}</td>
                                 <td>{{ $produto->itemDetalhe->comprimento ?? ''}}</td>
@@ -56,17 +58,10 @@
                     </tbody>
                 </table>                
                 {{ $produtos->appends($request)->links() }}
-                <br>
-                <!--
-                {{ $produtos->count() }} - Total de registros por página.
-                <br>
-                {{ $produtos->total() }} - Total de registros consultados.
-                <br>
-                {{ $produtos->firstItem() }} - Número do primeiro registro da página.
-                <br>
-                {{ $produtos->lastItem() }} - Número do último registro da página.
+                <br>     
+                <!--           
+                Exibindo {{ $produtos->count() }} produtos de  (de {{ $produtos->firstItem() }} a {{ $produtos->lastItem() }}).
                 -->
-                Exibindo {{ $produtos->count() }} produtos de {{ $produtos->total() }} (de {{ $produtos->firstItem() }} a {{ $produtos->lastItem() }}).
             </div>
         </div>
     </div>

@@ -17,9 +17,12 @@ class ProdutoController extends Controller
      */
     public function index(Request $request)
     {
-        $produtos = Item::paginate(10);
-
-        return view('app.produto.index', ['produtos' => $produtos, 'request' => $request->all()]);
+        //Eager loading. Carrega os detalhes junto com os dados da tabela produtos.
+        $produtos = Item::with(['itemDetalhe', 'fornecedor'])->simplePaginate(3);
+        
+        return view('app.produto.index', [
+            'produtos' => $produtos, 'request' => $request->all()
+        ]);
     }
 
     /**
