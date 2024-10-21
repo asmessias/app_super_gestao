@@ -1,5 +1,7 @@
 <?php
 
+namespace Database\Seeders;
+
 use Illuminate\Database\Seeder;
 use App\SiteContato;
 
@@ -12,7 +14,7 @@ class SiteContatoSeeder extends Seeder
      */
     public function run()
     {
-        
+       /* 
         $contato = new SiteContato();
 
         $contato->nome = 'Sistema';
@@ -22,7 +24,7 @@ class SiteContatoSeeder extends Seeder
         $contato->mensagem = 'Seja bem-vindo ao sistema SG';
 
         $contato->save();
-        
-        //factory(SiteContato::class, 100)->create();        
+        */
+        factory(SiteContato::class, 100)->create();        
     }
 }
