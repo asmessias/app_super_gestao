@@ -45,6 +45,9 @@ Route::middleware('autenticacao:ldap')->prefix('app')->group(function(){
 
     //Rotas para produtos.
     Route::resource('produto', 'ProdutoController');
+
+    //Rotas para produtos detalhes.
+    Route::resource('produto-detalhe', 'ProdutoDetalheController');
 });
 
 Route::get('/teste/{p1}/{p2}', 'TesteController@teste')->name('site.teste');
