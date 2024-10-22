@@ -19,4 +19,12 @@ class Item extends Model
     public function fornecedor() {
         return $this->belongsTo('App\Fornecedor');
     }
+
+    public function pedidos() {
+        //Implementação com tabelas padronizadas.
+        //return $this->belongsToMany('App\Pedido', 'pedidos_produtos');
+
+        //Implemetação com tabelas não padronizadas.
+        return $this->belongsToMany('App\Pedido', 'pedidos_produtos', 'produto_id', 'pedido_id');
+    }
 }
