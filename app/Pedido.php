@@ -12,6 +12,6 @@ class Pedido extends Model
         //return $this->belongsToMany('App\Produto', 'pedidos_produtos');
 
         //Implemetação com tabelas não padronizadas.
-        return $this->belongsToMany('App\Item', 'pedidos_produtos', 'pedido_id', 'produto_id')->withPivot('created_at', 'quantidade');
+        return $this->belongsToMany('App\Item', 'pedidos_produtos', 'pedido_id', 'produto_id')->withPivot('created_at', 'quantidade', 'id');
     }
 }
